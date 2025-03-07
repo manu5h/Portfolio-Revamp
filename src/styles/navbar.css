@@ -1,0 +1,54 @@
+.Navlogo {
+  width: 250px;
+  padding: 15px
+}
+
+.navBarMainDiv {
+  background-color: rgba(33, 36, 40, 0.8); 
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: fixed;
+  backdrop-filter: blur(10px); 
+}
+
+.navBarLinksDiv {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.navBarLinksDiv li a {
+  color: #c4cfde;
+  text-decoration: none;
+  list-style-type: none;
+  padding: 0 20px 0 20px;
+  font-size: 16px;
+}
+
+.navBarLinksDiv li a:hover {
+  color: #fff;
+}
+
+.navBarLinksDiv li {
+  list-style-type: none;
+}
+
+.navbarContactDiv {
+  align-content: center;
+  background-color: #212428;
+  border-radius: 20px;
+  box-shadow: 0px 0px 15px #fffafa24;
+  height: 35px;
+}
+
+.navbarContactDiv a {
+  color: #ff014f !important;
+}
+
+.navbarContactDiv:hover {
+  box-shadow: 0px 0px 25px #fffafa24;
+}
+
+

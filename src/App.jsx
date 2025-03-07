@@ -1,10 +1,12 @@
+import NavBar from "./components/navBar";
+import PotraitDiv from "./components/potraitDiv";
 function App() {
-
   return (
     <>
-      <p>hellow</p>
+      <NavBar />
+      <PotraitDiv />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,0 +1,52 @@
+.portaitMainDiv {
+  padding-top: 115px;
+  display: flex;
+}
+
+.portaitMainDiv img {
+  width: 400px;
+}
+
+.portraitTextDiv {
+  align-content: center;
+}
+
+.portraitImg {
+  display: flex;
+  justify-content: end;
+  width: 50%;
+}
+
+.typewriter {
+  font-size: 40px;
+  font-weight: bold;
+  color: #ff014f;
+  text-align: end;
+  display: inline-block;
+  white-space: nowrap;
+  position: relative;
+}
+
+.hidden-text {
+  visibility: hidden;
+}
+
+.visible-text {
+  position: absolute;
+  right: 0;
+}
+
+.cursor {
+  display: inline-block;
+  width: 5px;
+  background-color: #ff014f;
+  animation: blink 0.7s infinite;
+  position: absolute;
+  right: 0;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
