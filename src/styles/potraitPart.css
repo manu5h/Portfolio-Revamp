@@ -50,3 +50,54 @@
     opacity: 0;
   }
 }
+
+.educationMainDiv {
+  justify-content: center;
+  display: flex;
+  gap: 20px;
+}
+
+.educationSecondDiv {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.educationDate {
+  color: #ff014f;
+  font-weight: 500;
+  width: 25%;
+  min-width: 120px;
+}
+
+.educationTitle {
+  margin-bottom: 5px;
+  color: #c4cfde;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.educationInstitution,
+.educationLocation {
+  margin: 5px 0;
+  font-weight: 400;
+  color: #c4cfde;
+  font-size: 0.9rem;
+}
+
+.educationAllDivs {
+  box-shadow: 0px 0px 15px #fffafa24;
+  padding: 15px;
+  border-radius: 20px;
+  width: 65%;
+  justify-content: center;
+  display: grid;
+}
+
+.educationDate {
+  position: relative; 
+}
+
+.educationSemiDivs {
+  position: relative; 
+}
