@@ -3,6 +3,7 @@ import NavBar from "./components/navBar";
 import PotraitDiv from "./components/potraitDiv";
 import Resume from "./components/resume";
 import Space from "./components/space";
+import Education from "./components/educationDiv";
 import { ResumeTitle } from "./components/resume";
 
 const Section1 = ({ children }) => {
@@ -61,6 +62,10 @@ export default function App() {
       <Section2>
         <Resume />
       </Section2>
+      <Section2>
+        <Education />
+      </Section2>
+
     </>
   );
 }
