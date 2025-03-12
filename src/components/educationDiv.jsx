@@ -37,12 +37,56 @@ const EducationItem = ({ date, title, institution, location }) => {
 
 const Education = () => {
   return (
-    <div className="educationMainDiv">
-      <div className="educationAllDivs">
-        <div className="educationSemiDivs">
-          {educationData.map((item, index) => (
-            <EducationItem key={index} {...item} />
-          ))}
+    <div className="educationFullDiv" style={{ height: "45vh" }}>
+      <div className="educationMainDiv">
+        <div className="educationAllDivs">
+          <div className="educationSemiDivs">
+            {educationData.map((item, index) => (
+              <EducationItem key={index} {...item} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const experianceData = [
+  {
+    date: "08-2024 - Present",
+    title: "Software Engineer Intern",
+    company: "Sri Lanka Insurance Corporation Life LTD",
+    location: "Colombo, Sri Lanka",
+    skills: "Skills : (React Native , React , .NET , SQL)",
+  },
+];
+
+const ExperianceItem = ({ date, title, company, location, skills }) => {
+  return (
+    <div className="educationSecondDiv">
+      <h4 className="educationDate">{date}</h4>
+      <div>
+        <h4 className="educationTitle">{title}</h4>
+        <h5 className="educationInstitution">{company}</h5>
+        <h5 className="educationLocation">{location}</h5>
+        <h5 className="educationLocation" style={{ color: "#ff014f" }}>
+          {skills}
+        </h5>
+      </div>
+    </div>
+  );
+};
+
+export const Experience = () => {
+  return (
+    <div className="educationFullDiv" style={{ height: "45vh" }}>
+      <div className="educationMainDiv">
+        <div className="educationAllDivs">
+          <div className="educationSemiDivs">
+            {experianceData.map((item, index) => (
+              <ExperianceItem key={index} {...item} />
+            ))}
+          </div>
         </div>
       </div>
     </div>

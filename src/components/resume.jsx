@@ -1,54 +1,52 @@
-import { useState } from "react";
+import { useContext } from "react";
 import "../styles/resume.css";
+import { ResumeContext } from "../context";
 
 function Resume() {
-  const [activeTitle, setActiveTitle] = useState("education");
+  const { resumeField, toogleResumeField } = useContext(ResumeContext);
 
   return (
-    <div className="resemeMainDiv">
+    <div className="resumeMainDiv">
       <div className="resumeDiv">
         <div className="resumeTitlesMainDiv">
-          {["education", "skills", "experience"].map((title) => (
+          {["education", "experience"].map((title) => (
             <div
               key={title}
-              onClick={() => setActiveTitle(title)}
+              onClick={() => toogleResumeField(title)}
               className="resumeTitles"
               style={{
                 background:
-                  activeTitle === title
+                  resumeField === title
                     ? "linear-gradient(to right, rgb(20 20 20), rgb(34, 37, 41))"
                     : "transparent",
                 borderRadius: "10px",
                 boxShadow:
-                  activeTitle === title ? "0px 0px 15px #fffafa24" : "none",
-                transform: activeTitle === title ? "scale(1.05)" : "scale(1)",
+                  resumeField === title ? "0px 0px 15px #fffafa24" : "none",
+                transform: resumeField === title ? "scale(1.05)" : "scale(1)",
                 transition: "all 0.3s ease-in-out",
               }}
             >
               <h3
                 style={{
-                  color: activeTitle !== title ? "#fff" : "#ff014f",
-                  fontWeight: activeTitle === title ? "400" : "300",
+                  color: resumeField !== title ? "#fff" : "#ff014f",
+                  fontWeight: resumeField === title ? "400" : "300",
                   transition: "color 0.3s ease-in-out",
                 }}
               >
                 {title === "education"
                   ? "Education"
-                  : title === "skills"
-                  ? "Professional Skills"
                   : "Experience"}
               </h3>
             </div>
           ))}
         </div>
       </div>
-      <h3>next part</h3>
     </div>
   );
 }
 
 export const ResumeTitle = () => {
- return <h3 className="resumeheading">My Resume</h3>;
+  return <h3 className="resumeheading">My Resume</h3>;
 };
 
 export default Resume;

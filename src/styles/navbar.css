@@ -11,6 +11,7 @@
   width: 100%;
   position: fixed;
   backdrop-filter: blur(10px); 
+  z-index: 1;
 }
 
 .navBarLinksDiv {
