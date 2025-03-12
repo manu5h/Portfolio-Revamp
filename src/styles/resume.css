@@ -1,0 +1,30 @@
+.resumeheading {
+  font-size: 50px;
+  text-align: center;
+  color: #c4cfde;
+}
+
+.resumeTitlesMainDiv {
+  border-radius: 10px;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #202327;
+  box-shadow: 0px 0px 15px #fffafa24;
+  height: 100px;
+  align-items: center;
+}
+
+.resumeTitles {
+  width: 33.3%;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  align-items: center;
+  height: 100%;
+}
+
+.resumeDiv {
+  display: flex;
+  justify-content: center;
+}

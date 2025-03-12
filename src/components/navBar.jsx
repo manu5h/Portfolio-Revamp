@@ -10,7 +10,7 @@ function NavBar() {
       <ul className="navBarLinksDiv">
         <li>
           <Link to="hero" smooth={true} duration={500}>
-            ABOUT
+            HOME
           </Link>
         </li>
         <li>
