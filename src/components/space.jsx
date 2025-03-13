@@ -4,7 +4,7 @@ function Space() {
   return (
     <div
       style={{
-        margin: "5% auto ",
+        margin: "7% auto ",
         width: "90vw",
         height: "2px",
         backgroundColor: "#fff",

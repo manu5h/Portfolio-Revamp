@@ -33,9 +33,7 @@ function Resume() {
                   transition: "color 0.3s ease-in-out",
                 }}
               >
-                {title === "education"
-                  ? "Education"
-                  : "Experience"}
+                {title === "education" ? "Education" : "Experience"}
               </h3>
             </div>
           ))}

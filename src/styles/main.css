@@ -7,8 +7,10 @@
 body {
   background-color: #212428;
   margin: 0;
+  -webkit-tap-highlight-color: transparent; 
+  user-select: none; 
+  touch-action: manipulation; 
 }
-
 
 div,
 h1,
@@ -20,3 +22,4 @@ input,
 p {
   font-family: "default";
 }
+

@@ -1,12 +1,8 @@
 .resumeheading {
   font-size: 50px;
   text-align: center;
-  color: #212428;
-  text-shadow: 
-        -0.5px -0.5px 0 #c4cfde, 
-         0.5px -0.5px 0 #c4cfde, 
-        -0.5px  0.5px 0 #c4cfde, 
-         0.5px  0.5px 0 #c4cfde;
+  color: #c4cfde;
+  font-weight: 300;
 }
 
 .resumeTitlesMainDiv {
@@ -35,11 +31,10 @@
   justify-content: center;
 }
 
-
 .educationMainDiv {
   justify-content: center;
   display: flex;
-  transition: "color 0.3s ease-in-out",
+  transition: "color 0.3s ease-in-out";
 }
 
 .educationSecondDiv {
@@ -81,9 +76,44 @@
 }
 
 .educationDate {
-  position: relative; 
+  position: relative;
 }
 
 .educationSemiDivs {
-  position: relative; 
+  position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  .resumeheading {
+    font-size: 18px;
+  }
+  .resumeTitles {
+    height: 50%;
+  }
+
+  .resumeTitlesMainDiv {
+    height: 50%;
+  }
+
+  .resumeTitles h3{
+    font-size: 14px;
+  }
+
+  .educationTitle {
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .educationInstitution, .educationLocation {
+    font-weight: 300;
+    font-size: 0.8rem;
+}
+
+.educationSecondDiv {
+  width: 80vw;
+}
+
+.educationDate {
+  font-size: 0.8rem;
+}
 }

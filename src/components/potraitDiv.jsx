@@ -11,51 +11,52 @@ function PotraitDiv() {
       </div>
       <div className="portraitTextDiv">
         <div>
-          <div style={{ paddingLeft: "20px" }}>
+          <div style={{ paddingLeft: "5%", width: "100%" }}>
             <h2
               style={{
                 color: "#878E99",
                 textAlign: "start",
-                fontSize: "60px",
+                fontSize: "5vw",
                 margin: 0,
               }}
             >
               Hi, I’m
             </h2>
             <h2
+              className="firstNameText"
               style={{
                 color: "#FF014F",
                 textAlign: "start",
-                fontSize: "75px",
                 margin: 0,
               }}
             >
               Manusha
             </h2>
             <h2
+              className="firstNameText"
               style={{
                 color: "#FF014F",
                 textAlign: "start",
-                fontSize: "75px",
-                margin: "0 0 10px 0",
+                margin: "0 0 5px 0",
               }}
             >
               Upekshana
             </h2>
             <ReactTyped
               strings={[
+                "SE Undergraduate",
                 "Mobile Developer",
-                "Software Engineer Undergraduate",
-                "UI/UX Designer",
                 "Web Developer",
+                "UI/UX Designer",
                 "Video Editor",
               ]}
               typeSpeed={100}
               loop
+              className="animatedSkills"
               backSpeed={20}
               cursorChar=" |"
               showCursor={true}
-              style={{ color: "#C4CFDE", fontSize: "30px" }}
+              style={{ color: "#C4CFDE" }}
             />
           </div>
         </div>

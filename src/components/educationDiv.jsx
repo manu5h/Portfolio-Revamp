@@ -37,7 +37,7 @@ const EducationItem = ({ date, title, institution, location }) => {
 
 const Education = () => {
   return (
-    <div className="educationFullDiv" style={{ height: "45vh" }}>
+    <div className="educationFullDiv" >
       <div className="educationMainDiv">
         <div className="educationAllDivs">
           <div className="educationSemiDivs">
@@ -79,7 +79,7 @@ const ExperianceItem = ({ date, title, company, location, skills }) => {
 
 export const Experience = () => {
   return (
-    <div className="educationFullDiv" style={{ height: "45vh" }}>
+    <div className="educationFullDiv" >
       <div className="educationMainDiv">
         <div className="educationAllDivs">
           <div className="educationSemiDivs">
