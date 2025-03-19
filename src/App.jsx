@@ -1,5 +1,6 @@
-import { useContext, useEffect, useState } from "react";
+import { lazy, Suspense, useContext, useEffect, useState } from "react";
 import { ResumeContext } from "./context";
+import { useInView } from "react-intersection-observer";
 import NavBar from "./components/navBar";
 import PotraitDiv from "./components/potraitDiv";
 import Resume from "./components/resume";
@@ -11,15 +12,14 @@ import {
   useMotionValue,
   useSpring,
 } from "framer-motion";
-import { ResumeTitle } from "./components/resume";
+import SectionTitle from "./components/sectionTitle";
+
+// Lazy Load TechSkills Component
+const TechSkills = lazy(() => import("./components/skills"));
 
 // Section Component with ID Support
 const Section = ({ id, children, animation }) => (
-  <motion.div
-    id={id} // Apply id for scrolling
-    className="section"
-    {...animation}
-  >
+  <motion.div id={id} className="section" {...animation}>
     {children}
   </motion.div>
 );
@@ -70,6 +70,12 @@ export default function App() {
     y.set(e.clientY - CURSOR_SIZE / 2);
   };
 
+  // Intersection Observer for TechSkills
+  const { ref: skillsRef, inView: skillsInView } = useInView({
+    triggerOnce: true, // Load only once when visible
+    threshold: 0.2, // Load when 20% of the section is visible
+  });
+
   return (
     <div onMouseMove={handleMouseMove}>
       <NavBar />
@@ -94,20 +100,34 @@ export default function App() {
       <Section id="home" animation={animations.fadeLeft}>
         <PotraitDiv />
       </Section>
-      <div id="resume" >
-        <Space  />
-        <Section  animation={animations.fadeLeft}>
-          <ResumeTitle />
+
+      <div id="resume">
+        <Space />
+        <Section animation={animations.fadeLeft}>
+          <SectionTitle title="ACADEMICS & CAREER" />
         </Section>
-        <Section  animation={animations.fadeScale}>
+        <Section animation={animations.fadeScale}>
           <Resume />
         </Section>
-        <ResumeSection id="resume" />
+        <ResumeSection />
       </div>
-      <Section animation={animations.fadeUp}>
+
+      <div id="skills" ref={skillsRef}>
         <Space />
-      </Section>
-      
+        <Section animation={animations.fadeLeft}>
+          <SectionTitle title="TECHNICAL SKILLS" />
+        </Section>
+        {/* Lazy Load TechSkills when in view */}
+        {skillsInView && (
+          <Suspense fallback={<p style={{ textAlign: "center", color: "#c4cfde" }}>Loading Skills...</p>}>
+            <Section animation={animations.fadeScale}>
+              <TechSkills />
+            </Section>
+          </Suspense>
+        )}
+      </div>
+
+      <Space />
     </div>
   );
 }
@@ -115,7 +135,7 @@ export default function App() {
 function ResumeSection() {
   const { resumeField } = useContext(ResumeContext);
 
-  if (!resumeField) return null; 
+  if (!resumeField) return null;
 
   return (
     <AnimatePresence mode="wait">

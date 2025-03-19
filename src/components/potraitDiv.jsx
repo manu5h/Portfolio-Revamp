@@ -16,7 +16,7 @@ function PotraitDiv() {
               style={{
                 color: "#878E99",
                 textAlign: "start",
-                fontSize: "5vw",
+                fontSize: "4vw",
                 margin: 0,
               }}
             >

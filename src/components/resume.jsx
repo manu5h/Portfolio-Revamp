@@ -43,8 +43,6 @@ function Resume() {
   );
 }
 
-export const ResumeTitle = () => {
-  return <h3 className="resumeheading">My Resume</h3>;
-};
+
 
 export default Resume;

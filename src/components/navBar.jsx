@@ -64,7 +64,20 @@ function NavBar() {
             activeClass="active"
             onClick={() => setMenuOpen(false)}
           >
-            RESUME
+            ACADEMICS & CAREER
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="skills"
+            smooth={true}
+            duration={500}
+            offset={-50}
+            spy={true}
+            activeClass="active"
+            onClick={() => setMenuOpen(false)}
+          >
+            TECH SKILLS
           </Link>
         </li>
         <li>
