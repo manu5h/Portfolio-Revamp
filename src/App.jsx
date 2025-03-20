@@ -14,17 +14,14 @@ import {
 } from "framer-motion";
 import SectionTitle from "./components/sectionTitle";
 
-// Lazy Load TechSkills Component
 const TechSkills = lazy(() => import("./components/skills"));
 
-// Section Component with ID Support
 const Section = ({ id, children, animation }) => (
   <motion.div id={id} className="section" {...animation}>
     {children}
   </motion.div>
 );
 
-// Animation Presets
 const animations = {
   fadeLeft: {
     initial: { opacity: 0, x: -50 },
@@ -51,6 +48,8 @@ const animations = {
 export default function App() {
   const CURSOR_SIZE = 40;
   const [isMobile, setIsMobile] = useState(false);
+  const [loadingNum, setLoadingNum] = useState(0);
+  
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
@@ -70,10 +69,9 @@ export default function App() {
     y.set(e.clientY - CURSOR_SIZE / 2);
   };
 
-  // Intersection Observer for TechSkills
   const { ref: skillsRef, inView: skillsInView } = useInView({
-    triggerOnce: true, // Load only once when visible
-    threshold: 0.2, // Load when 20% of the section is visible
+    triggerOnce: true,
+    threshold: 0.2,
   });
 
   return (
@@ -117,17 +115,28 @@ export default function App() {
         <Section animation={animations.fadeLeft}>
           <SectionTitle title="TECHNICAL SKILLS" />
         </Section>
-        {/* Lazy Load TechSkills when in view */}
         {skillsInView && (
-          <Suspense fallback={<p style={{ textAlign: "center", color: "#c4cfde" }}>Loading Skills...</p>}>
+          <Suspense>
             <Section animation={animations.fadeScale}>
-              <TechSkills />
+              <TechSkills onLoaded={() => setLoadingNum(1)} />
             </Section>
           </Suspense>
         )}
       </div>
 
-      <Space />
+      {loadingNum === 1 && (
+        <div id="projects">
+          <Space />
+          <Section animation={animations.fadeLeft}>
+            <SectionTitle title="PROJECTS " />
+          </Section>
+          {skillsInView && (
+            <Section animation={animations.fadeScale}>
+              {/* <TechSkills /> */}
+            </Section>
+          )}
+        </div>
+      )}
     </div>
   );
 }

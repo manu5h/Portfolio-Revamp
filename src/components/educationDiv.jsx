@@ -57,7 +57,7 @@ const experianceData = [
     title: "Software Engineer Intern",
     company: "Sri Lanka Insurance Corporation Life LTD",
     location: "Colombo, Sri Lanka",
-    skills: "Skills : (React Native , React , .NET , SQL)",
+    skills: "Skills : (React Native, React, .NET, SQL)",
   },
 ];
 

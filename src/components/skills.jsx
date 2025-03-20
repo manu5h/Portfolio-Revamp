@@ -16,14 +16,19 @@ import premier from "../assets/adobe-premiere-pro-icon.svg";
 import afterEffect from "../assets/adobe-after-effects-icon.svg";
 import "../styles/skills.css";
 
-const TechSkills = () => {
+const TechSkills = ({ onLoaded }) => {
   const [delays, setDelays] = useState([]);
 
   useEffect(() => {
-    // Generate random delay times only on first render
+    if (onLoaded) {
+      onLoaded();
+    }
+  }, [onLoaded]);
+
+  useEffect(() => {
     const randomDelays = Array(15)
       .fill()
-      .map(() => `${Math.random() * 1.5}s`); // Random delay up to 1.5s
+      .map(() => `${Math.random() * 1.5}s`); 
     setDelays(randomDelays);
   }, []);
 
@@ -41,21 +46,20 @@ const TechSkills = () => {
   const programming = [
     { name: "Python", url: python },
     { name: "Java", url: java },
-    { name: "JavaScript", url: javaScript },
+    { name: "Java Script", url: javaScript },
   ];
 
   const design = [
     { name: "Figma", url: figma },
-    { name: "LightRoom", url: lightroom },
+    { name: "Light Room", url: lightroom },
     { name: "Premiere Pro", url: premier },
     { name: "After Effect", url: afterEffect },
   ];
 
   return (
     <div className="skillsMainDiv">
-      {/* Left Section (Web & Mobile) */}
       <div className="leftSection">
-        <h4 style={{ color: "#c4cfde", textAlign: "center" }}>Web & Mobile</h4>
+        <h4 style={{ color: "#c4cfde", textAlign: "center", fontWeight: "normal" }}>Web & Mobile</h4>
         <div className="skillsRow">
           {skills.slice(0, 4).map((skill, index) => (
             <div
@@ -64,7 +68,7 @@ const TechSkills = () => {
               style={{ animationDelay: delays[index] }}
             >
               <img src={skill.url} alt={skill.name} width="50" height="50" />
-              <p style={{ color: "#c4cfde" }}>{skill.name}</p>
+              <p style={{ color: "#c4cfde", fontSize: "0.8rem" }}>{skill.name}</p>
             </div>
           ))}
         </div>
@@ -76,16 +80,15 @@ const TechSkills = () => {
               style={{ animationDelay: delays[index + 4] }}
             >
               <img src={skill.url} alt={skill.name} width="50" height="50" />
-              <p style={{ color: "#c4cfde" }}>{skill.name}</p>
+              <p style={{ color: "#c4cfde", fontSize: "0.8rem" }}>{skill.name}</p>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Right Section */}
       <div className="rightSection">
         <div className="rightSectionTop">
-          <h4 style={{ color: "#c4cfde", textAlign: "center" }}>Programming</h4>
+          <h4 style={{ color: "#c4cfde", textAlign: "center", fontWeight: "normal" }}>Programming</h4>
           <div className="skillsRow">
             {programming.map((skill, index) => (
               <div
@@ -94,15 +97,14 @@ const TechSkills = () => {
                 style={{ animationDelay: delays[index + 8] }}
               >
                 <img src={skill.url} alt={skill.name} width="50" height="50" />
-                <p style={{ color: "#c4cfde" }}>{skill.name}</p>
+                <p style={{ color: "#c4cfde", fontSize: "0.8rem" }}>{skill.name}</p>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Design Skills */}
         <div className="rightSectionDown">
-          <h4 style={{ color: "#c4cfde", textAlign: "center" }}>Design</h4>
+          <h4 style={{ color: "#c4cfde", textAlign: "center", fontWeight: "normal" }}>Design</h4>
           <div className="skillsRow">
             {design.map((skill, index) => (
               <div
@@ -111,7 +113,7 @@ const TechSkills = () => {
                 style={{ animationDelay: delays[index + 11] }}
               >
                 <img src={skill.url} alt={skill.name} width="50" height="50" />
-                <p style={{ color: "#c4cfde" }}>{skill.name}</p>
+                <p style={{ color: "#c4cfde", fontSize: "0.8rem" }}>{skill.name}</p>
               </div>
             ))}
           </div>

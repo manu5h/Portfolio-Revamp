@@ -8,7 +8,7 @@
 }
 
 .skillsMainDiv {
-  padding: 15px;
+  padding: 0 15px;
   display: flex;
   flex-direction: row;
   gap: 15px;
@@ -17,8 +17,7 @@
 .leftSection {
   flex: 1;
   display: flex;
-  height: 61vh;
-  border: 3px solid #343a3f;
+  box-shadow: 0px 0px 15px #fffafa24;
   border-radius: 20px;
   flex-direction: column;
   justify-content: center;
@@ -32,12 +31,12 @@
 }
 
 .rightSectionDown {
-  border: 3px solid #343a3f;
+  box-shadow: 0px 0px 15px #fffafa24;
   border-radius: 20px;
 }
 
 .rightSectionTop {
-  border: 3px solid #343a3f;
+  box-shadow: 0px 0px 15px #fffafa24;
   border-radius: 20px;
   margin-bottom: 15px;
 }
@@ -53,10 +52,24 @@
   width: 8vw;
   background-color: #343a3f;
   text-align: center;
-  padding: 15px 0;
+  padding: 15px 0 0 0;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
   animation: pop 2s ease-in-out forwards;
+}
+
+@media screen and (max-width: 768px) {
+  .skillsMainDiv {
+    display: grid;
+  }
+
+  .skillslogoDiv {
+    width: 20vw;
+  }
+
+  .skillsRow {
+    gap: 0;
+}
 }

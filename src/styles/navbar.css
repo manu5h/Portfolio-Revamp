@@ -10,7 +10,7 @@
   justify-content: space-between;
   width: 99vw;
   position: fixed;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(7px);
   z-index: 1;
 }
 
