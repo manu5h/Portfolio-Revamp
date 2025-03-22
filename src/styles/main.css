@@ -23,3 +23,13 @@ p {
   font-family: "default";
 }
 
+.fakeDiv{
+  height: 20vh;
+}
+
+@media screen and (max-width: 768px) {
+  .fakeDiv{
+    height: 7vh;
+  }
+}
+

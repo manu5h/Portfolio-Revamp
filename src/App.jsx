@@ -6,6 +6,8 @@ import PotraitDiv from "./components/potraitDiv";
 import Resume from "./components/resume";
 import Space from "./components/space";
 import Education, { Experience } from "./components/educationDiv";
+import Displayprojects from "./components/projects";
+import Contact from "./components/contact";
 import {
   AnimatePresence,
   motion,
@@ -49,7 +51,6 @@ export default function App() {
   const CURSOR_SIZE = 40;
   const [isMobile, setIsMobile] = useState(false);
   const [loadingNum, setLoadingNum] = useState(0);
-  
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
@@ -129,14 +130,16 @@ export default function App() {
           <Space />
           <Section animation={animations.fadeLeft}>
             <SectionTitle title="PROJECTS " />
+            <Displayprojects />
+            {/* </Section>
+            <Section animation={animations.fadeScale}> */}
           </Section>
-          {skillsInView && (
-            <Section animation={animations.fadeScale}>
-              {/* <TechSkills /> */}
-            </Section>
-          )}
         </div>
       )}
+      <div id="contact" className="fakeDiv"></div>
+      <div id="contact">
+        <Contact />
+      </div>
     </div>
   );
 }

@@ -1,0 +1,69 @@
+.projectImg {
+  margin-top: 10px;
+  width: 100%;
+  height: 20vh;
+}
+
+.projectSupremeDiv {
+  display: flex;
+  justify-content: center;
+  margin-top: -6vh;
+}
+
+.projectMainDiv {
+  flex-wrap: wrap;
+  display: flex;
+  width: 80%;
+  justify-content: space-evenly;
+}
+
+.projectEachDiv {
+  margin-top: 10vh;
+  width: 20vw;
+  box-shadow: 0px 0px 15px #fffafa24;
+  border-radius: 20px;
+  padding: 15px;
+}
+
+.projectTitleDic {
+  margin: 0 5px 0 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.projectSvg {
+  scale: 1.2;
+}
+
+.projectDescription,
+.technologiesTitle,
+.technologies,
+.projectLink {
+  font-size: 13px;
+}
+
+.technologiesTitle {
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.technologies {
+  margin: 0;
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 768px) {
+  .projectSupremeDiv {
+    margin-top: -4vh;
+  }
+
+  .projectEachDiv {
+    margin-top: 5vh;
+    width: auto;
+  }
+
+  .projectImg {
+    height: 18vh;
+  }
+}

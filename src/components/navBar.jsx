@@ -97,13 +97,13 @@ function NavBar() {
           <Link
             to="contact"
             smooth={true}
-            duration={500}
+            duration={1000}
             offset={-50}
             spy={true}
             activeClass="active"
             onClick={() => setMenuOpen(false)}
           >
-            CONTACT
+            CONECT
           </Link>
         </li>
       </ul>

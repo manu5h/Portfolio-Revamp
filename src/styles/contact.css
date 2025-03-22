@@ -1,0 +1,138 @@
+.contact-container {
+  text-align: center;
+  padding: 50px 20px;
+  background: #121212;
+  color: #c4cfde;
+}
+
+.contact-title {
+  font-size: 2rem;
+  color: #ff014f;
+  margin-bottom: 10px;
+}
+
+.contact-subtitle {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  margin: auto;
+}
+
+.contact-input,
+.contact-textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background: #1a1a1a;
+  color: white;
+  transition: 0.3s ease;
+}
+
+.contact-input:focus,
+.contact-textarea:focus {
+  outline: none;
+  border-color: #ff014f;
+  box-shadow: 0 0 10px #ff014f;
+}
+
+.contact-textarea {
+  height: 100px;
+  resize: none;
+}
+
+.contact-button {
+  background: #ff014f;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+  margin-top: 5%;
+}
+
+.contact-button:hover {
+  background: #e60046;
+  box-shadow: 0 0 10px #ff014f;
+}
+
+.contact-icons {
+  margin-top: 20px;
+  justify-content: space-between;
+  display: flex;
+  padding: 0 4vw 0 4vw;
+}
+
+.contact-icon {
+  font-size: 24px;
+  color: #c4cfde;
+  margin: 0 10px;
+  transition: 0.3s ease;
+}
+
+.contact-icon:hover {
+  color: #ff014f;
+  transform: scale(1.2);
+}
+
+.contact-icons-mobile {
+  display: none;
+}
+
+.contactSectionSpace {
+  margin: 4% auto 2% auto;
+  width: 90vw;
+  height: 2px;
+  background-color: #fff;
+  opacity: 0.1;
+}
+
+@media screen and (max-width: 768px) {
+  .contact-title {
+    font-size: 1.5rem;
+  }
+
+  .contact-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .contact-input,
+  .contact-textarea {
+    width: 80%;
+  }
+
+  .contact-button {
+    padding: 8px 13px;
+    font-size: 0.8rem;
+  }
+
+  .contact-icons {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .allRight {
+    font-size: 14px;
+  }
+
+  .contact-icons-mobile {
+    display: grid;
+  }
+
+  .contact-icons {
+    display: none;
+  }
+
+  .contactSectionSpace {
+    margin: 15% auto 15% auto;
+  }
+}
