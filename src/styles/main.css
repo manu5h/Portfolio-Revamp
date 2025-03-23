@@ -7,10 +7,31 @@
 body {
   background-color: #212428;
   margin: 0;
-  -webkit-tap-highlight-color: transparent; 
-  user-select: none; 
-  touch-action: manipulation; 
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  touch-action: manipulation;
 }
+
+/* Hide scrollbar for Chrome, Safari, and Edge */
+body::-webkit-scrollbar {
+  display: none;
+  width: 0;
+}
+
+/* Hide scrollbar for Firefox */
+body {
+  scrollbar-width: 0;
+}
+
+/* Hide scrollbar for Internet Explorer and Edge */
+body {
+  -ms-overflow-style: none;
+}
+
+html, body {
+  scroll-behavior: smooth;
+}
+
 
 div,
 h1,
@@ -23,13 +44,12 @@ p {
   font-family: "default";
 }
 
-.fakeDiv{
+.fakeDiv {
   height: 20vh;
 }
 
 @media screen and (max-width: 768px) {
-  .fakeDiv{
+  .fakeDiv {
     height: 7vh;
   }
 }
-

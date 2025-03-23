@@ -18,7 +18,6 @@
   align-items: center;
   display: flex;
   flex-direction: row;
-  padding: 0 15px 0 0;
 }
 
 .navBarLinksDiv li a {
