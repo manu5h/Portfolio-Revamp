@@ -6,6 +6,7 @@ import angularIcon from "../assets/angular-icon.svg";
 import nodejsIcon from "../assets/node-js-icon.svg";
 import boostrapIcon from "../assets/bootstrap-5-logo-icon.svg";
 import springBootIcon from "../assets/spring-boot-icon.svg";
+import dotNEt from "../assets/dotnet-svgrepo-com.svg";
 import sqlIcon from "../assets/sql-database-generic-svgrepo-com.svg";
 import python from "../assets/python-programming-language-icon.svg";
 import javaScript from "../assets/javascript-programming-language-icon.svg";
@@ -38,8 +39,8 @@ const TechSkills = ({ onLoaded }) => {
     { name: "React", url: reactIcon },
     { name: "Angular", url: angularIcon },
     { name: "Node.js", url: nodejsIcon },
+    { name: ".NET", url: dotNEt },
     { name: "Spring Boot", url: springBootIcon },
-    { name: "Bootstrap", url: boostrapIcon },
     { name: "SQL", url: sqlIcon },
   ];
 
