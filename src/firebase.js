@@ -1,10 +1,9 @@
 import { initializeApp } from "firebase/app";
 import {
   getFirestore,
-  collection,
+  doc,
   getDoc,
   setDoc,
-  doc,
   increment,
 } from "firebase/firestore";
 
@@ -12,43 +11,35 @@ const firebaseConfig = {
   apiKey: "AIzaSyCGuAT90vpmeTvixPnz4yqjAVWVWvHWpB8",
   authDomain: "manush-portfolio.firebaseapp.com",
   projectId: "manush-portfolio",
-  storageBucket: "manush-portfolio.firebasestorage.app",
+  storageBucket: "manush-portfolio.appspot.com", // ✅ Corrected
   messagingSenderId: "62567634562",
   appId: "1:62567634562:web:1e7e9d337771392979469b",
   measurementId: "G-084PRHPWXK",
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-
 export { db };
 
+// 🔹 Function to update visitor count
 export const updateVisitorCount = async () => {
-  const visitRef = doc(collection(db, "analytics"), "visits");
+  const visitRef = doc(db, "analytics", "visits"); // ✅ Directly reference the document
 
   try {
-    const visitDoc = await getDoc(visitRef);
-    if (visitDoc.exists()) {
-      await setDoc(visitRef, { count: increment(1) }, { merge: true });
-    } else {
-      await setDoc(visitRef, { count: 1 });
-    }
+    await setDoc(visitRef, { count: increment(1) }, { merge: true }); // ✅ Firestore correctly merges updates
   } catch (error) {
     console.error("Error updating visit count:", error);
   }
 };
 
+// 🔹 Function to track button clicks
 export const trackButtonClick = async (buttonName) => {
   const buttonRef = doc(db, "analytics", buttonName);
 
   try {
-    const buttonDoc = await getDoc(buttonRef);
-    if (buttonDoc.exists()) {
-      await setDoc(buttonRef, { clicks: increment(1) }, { merge: true });
-    } else {
-      await setDoc(buttonRef, { clicks: 1 });
-    }
+    await setDoc(buttonRef, { clicks: increment(1) }, { merge: true });
   } catch (error) {
-    console.error("Error tracking button click:", error);
+    console.error(`Error tracking click for ${buttonName}:`, error);
   }
 };
