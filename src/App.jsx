@@ -15,6 +15,7 @@ import {
   useSpring,
 } from "framer-motion";
 import SectionTitle from "./components/sectionTitle";
+import { updateVisitorCount } from "./firebase";
 
 const TechSkills = lazy(() => import("./components/skills"));
 
@@ -48,6 +49,10 @@ const animations = {
 };
 
 export default function App() {
+  useEffect(() => {
+    updateVisitorCount();
+  }, []);
+  
   const CURSOR_SIZE = 40;
   const [isMobile, setIsMobile] = useState(false);
   const [loadingNum, setLoadingNum] = useState(0);

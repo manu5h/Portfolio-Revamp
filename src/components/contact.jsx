@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import emailjs from "@emailjs/browser"; // Import EmailJS
+import emailjs from "@emailjs/browser"; 
 import {
   MailOutlined,
   LinkedinOutlined,
   GithubOutlined,
 } from "@ant-design/icons";
 import "../styles/contact.css";
+import { trackButtonClick } from "../firebase"; 
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -23,10 +24,10 @@ const Contact = () => {
 
     emailjs
       .send(
-        "service_og7jtkb", // Replace with your EmailJS service ID
-        "template_ics3vmy", // Replace with your EmailJS template ID
+        "service_og7jtkb", 
+        "template_ics3vmy", 
         formData,
-        "K2LGrC1IW7OpGMILz" // Replace with your EmailJS public key
+        "K2LGrC1IW7OpGMILz"
       )
       .then(
         () => {
@@ -44,7 +45,7 @@ const Contact = () => {
     <div className="contact-container">
       <h2 className="contact-title">Let's Connect</h2>
       <p className="contact-subtitle">
-        Have a discuss or just want to say hi? Drop me a message!
+        Have a discussion or just want to say hi? Drop me a message!
       </p>
       <form onSubmit={handleSubmit} className="contact-form">
         <input
@@ -73,13 +74,17 @@ const Contact = () => {
           required
           className="contact-textarea"
         />
-        <button type="submit" className="contact-button">
+        <button
+          type="submit"
+          className="contact-button"
+          onClick={() => trackButtonClick("contact_me")}
+        >
           Send Message
         </button>
       </form>
-      <div className="contactSectionSpace"
-        
-      ></div>
+
+      <div className="contactSectionSpace"></div>
+
       <div className="contact-icons">
         <h4 style={{ margin: 0 }}>MANUSH.DEV</h4>
         <div className="allRight">© 2025 All rights reserved.</div>
@@ -88,6 +93,7 @@ const Contact = () => {
             href="mailto:manushashan022@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackButtonClick("email_click")}
           >
             <MailOutlined className="contact-icon" />
           </a>
@@ -95,6 +101,7 @@ const Contact = () => {
             href="https://www.linkedin.com/in/manusha-upekshana/"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackButtonClick("linkedin_click")}
           >
             <LinkedinOutlined className="contact-icon" />
           </a>
@@ -102,19 +109,29 @@ const Contact = () => {
             href="https://github.com/manu5h"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackButtonClick("github_click")}
           >
             <GithubOutlined className="contact-icon" />
           </a>
         </div>
       </div>
+
       <div className="contact-icons-mobile">
-        <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", margin: "10px 0 0 0" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            margin: "10px 0 0 0",
+          }}
+        >
           <h4 style={{ margin: 0 }}>MANUSH.DEV</h4>
-          <div >
+          <div>
             <a
               href="mailto:manushashan022@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackButtonClick("email_click")}
             >
               <MailOutlined className="contact-icon" />
             </a>
@@ -122,6 +139,7 @@ const Contact = () => {
               href="https://www.linkedin.com/in/manusha-upekshana/"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackButtonClick("linkedin_click")}
             >
               <LinkedinOutlined className="contact-icon" />
             </a>
@@ -129,12 +147,15 @@ const Contact = () => {
               href="https://github.com/manu5h"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackButtonClick("github_click")}
             >
               <GithubOutlined className="contact-icon" />
             </a>
           </div>
         </div>
-        <div className="allRight" style={{marginTop: "20px"}}>© 2025 All rights reserved.</div>
+        <div className="allRight" style={{ marginTop: "20px" }}>
+          © 2025 All rights reserved.
+        </div>
       </div>
     </div>
   );

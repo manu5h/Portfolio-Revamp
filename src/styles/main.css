@@ -18,7 +18,6 @@ body::-webkit-scrollbar {
   width: 0;
 }
 
-/* Hide scrollbar for Firefox */
 body {
   scrollbar-width: 0;
 }
@@ -31,7 +30,6 @@ body {
 html, body {
   scroll-behavior: smooth;
 }
-
 
 div,
 h1,
