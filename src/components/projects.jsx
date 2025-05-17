@@ -25,7 +25,7 @@ const Displayprojects = () => {
       description: "Movie Radar is a movie recommendation web app. It allows users to discover movies based on genres, ratings, and personalized suggestions.",
       image: movieRadar,
       technologies: "React | TMDb & OMDb Open APIs",
-      link: "https://manu5h.github.io/MovieRadar/",
+      link: "https://movieradarlk.netlify.app/",
       category: "web",
     },
     {
