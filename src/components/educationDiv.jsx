@@ -53,7 +53,14 @@ const Education = () => {
 
 const experianceData = [
   {
-    date: "08-2024 - Present",
+    date: "09-2025 - Present",
+    title: "Associate Software Engineer",
+    company: "Sri Lanka Insurance Corporation Life LTD",
+    location: "Colombo, Sri Lanka",
+    skills: "Skills : (React Native, React, .NET, SQL, Software architecture)",
+  },
+  {
+    date: "08-2024 - 09-2025",
     title: "Software Engineer Intern",
     company: "Sri Lanka Insurance Corporation Life LTD",
     location: "Colombo, Sri Lanka",
